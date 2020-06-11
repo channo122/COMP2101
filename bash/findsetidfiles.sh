@@ -22,12 +22,18 @@
 echo "Setuid files:"
 echo "============="
 find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
+#this command  will download the set of commands
 echo ""
 echo "Setgid files:"
 echo "=============="
-find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6
+find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6 #sort -k6 sorts by their group
+#it will show the setgid files in a second listing
+#/dev/null so we do not get errors for inaccessible directories and files
 echo ""
-echo "The 10 largest regular files in the system:"
-echo "=============="
-find / -type f -exec ls -lah 2>/dev/null --block-size=M {} \; | sort -rh -k5 | head -n 10 | awk '{print $9, $3, $5}'
+echo "Display 10 Largest File in system:"
+echo "======================================="
+find / -type f -exec ls -lah 2>/dev/null --block-size=M {} \; | #block size converts size to MBytes, error redirect to /dev/null will garbage errors, {} \; will execute ls command on each findings
+sort -rh -k5 | #reverce short on 5th column
+head -n 10 | #outputs 10 files on top
+awk '{print $9, $3, $5}' #awk customly display column in order file name, owner, and size..
 echo ""
