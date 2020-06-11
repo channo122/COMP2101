@@ -25,9 +25,9 @@ find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 echo ""
 echo "Setgid files:"
 echo "=============="
-find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6 | awk '{print $5, $3, $1}'
+find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6
 echo ""
 echo "The 10 largest regular files in the system:"
 echo "=============="
-find / -type f -exec ls -lah 2>/dev/null --block-size=M {} \; | sort -rh -k5 | head -n 10 | awk '{print $5, $3, $9}'
+find / -type f -exec ls -lah 2>/dev/null --block-size=M {} \; | sort -rh -k5 | head -n 10 | awk '{print $9, $3, $5}'
 echo ""
