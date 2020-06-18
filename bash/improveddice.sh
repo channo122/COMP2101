@@ -19,10 +19,10 @@ echo "We have started processing..."
 # roll the dice and save the results
 range=6
 bias=1
-dice1=$(( RANDOM % range + bias ))
+dice1=$(( RANDOM % range + bias )) #rolled the dice using the variables fto process the range and bias
 dice2=$(( RANDOM % range + bias ))
-sum=$(( dice1 + dice2 ))
-average=$(( sum / 2 ))
-# display the results
+sum=$(( dice1 + dice2 )) #create the sum of the dice
+average=$(( sum / 2 )) #create the average of the dice
+# total summary of what was rolled, and what the results of your arithmetic was
 echo "Rolled two times $dice1, $dice2 and a sum is $sum"
 echo "Rolled two times $dice1, $dice2 and an average is $average"

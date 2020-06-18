@@ -8,15 +8,17 @@
 # Task 1: Improve this script to also retrieve and install the files kept in the https://zonzorp.net/pics.tgz tarfile
 #   - use the same kind of testing that is already in the script to only download the tarfile if you don't already have it and  to make sure the download and extraction commands work, then delete the local copy of the tarfile if the extraction was successful
 
-# make a Pictures directory if we don't have one - assumes we have a home directory
+# creating new directory name as picture if there's nothing
 test -d ~/Pictures || mkdir ~/Pictures
 
 # download a zipfile of pictures to our Pictures directory if it isn't already there - assumes you are online
 test -f ~/Pictures/pics.zip || wget -q -O ~/Pictures/pics.zip http://zonzorp.net/pics.zip
+# downloading tarfile into picture directory  if it is not there
 test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz
 
 # unpack the downloaded zipfile if it is there, then delete the local copy of the zipfile
 test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -o -q ~/Pictures/pics.zip && rm ~/Pictures/pics.zip
+# unpack the downloaded tarfile if it is there, then delete the local copy of the tar file
 test -f ~/Pictures/pics.tgz && tar -xzf ~/Pictures/pics.tgz -C ~/Pictures && rm ~/Pictures/pics.tgz
 
 # Make a report on what we have in the Pictures directory

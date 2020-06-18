@@ -7,12 +7,13 @@
 #    the sum of the 3 numbers with a label
 #    the product of the 3 numbers with a label
 
-read -p "Input No.1? " firstnum
+read -p "Input No.1? " firstnum # Read command is used to have 3 numbers from the user
 read -p "Input No.2? " secondnum
 read -p "Input No.3? " thirdnum
-sum=$((firstnum + secondnum + thirdnum))
-product=$((firstnum * secondnum * thirdnum))
+sum=$((firstnum + secondnum + thirdnum)) #doing addition of three numbers in this command
+product=$((firstnum * secondnum * thirdnum)) #product command is used to do the multiplication of that three numbers
 
+#giving summary
 cat <<EOF
 The sum of $firstnum , $secondnum and $thirdnum numbers are $sum .
 The product of $firstnum , $secondnum and $thirdnum numbers are $product .
