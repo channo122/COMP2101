@@ -9,39 +9,7 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-referenceString="Password" #Creating a variable to store password 
-read -s -p "Enter Text for Comparision:" myString #getting userinput  for password and saving into $myString
-echo
-if [ $myString = $referenceString ]; then #if-else condition 5 times to check input is valid or not by comparing $referenceString.
-echo "You got it right.."; echo
-else
- echo "Try something else.."
- read -s -p "Enter Another Text for Comparision:" myString
-  if [ $myString = $referenceString ]; then
-   echo "You got it right.."; echo
-  else
-    echo
-    echo "Try something else.."
-    read -s -p "Enter Another Text for Comparision:" myString
- if [ $myString = $referenceString ]; then
-   echo "You got it right.."; echo
- else
-   echo
-   echo "Try something else.."
-   read -s -p "Enter Another Text for Comparision:" myString
-   if [ $myString = $referenceString ]; then
-   echo "You got it right.."; echo
- else
-   echo
-   echo "Try something else.."
-   read -s -p "Enter Another Text for Comparision:" myString
-   if [ $myString = $referenceString ]; then
-   echo "You got it right.."; echo
- else
-   echo
-   echo "Try something else.."
-     fi
-	   fi
-	 fi
-   fi
-fi
+myString="TestString"
+referenceString="password"
+
+[ $myString = $referenceString ] && echo "Correct!" || echo "Incorrect."
